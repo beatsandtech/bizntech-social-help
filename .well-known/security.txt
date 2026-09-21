@@ -1,0 +1,6 @@
+Contact: mailto:info@ithealthcenter.com
+Contact: https://support.ithealthcenter.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Policy: https://ithealthcenter.com/privacy.html
+Canonical: https://ithealthcenter.com/.well-known/security.txt
