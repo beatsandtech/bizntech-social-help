@@ -112,17 +112,41 @@
       const catSlug = hash.replace("#/category/", "");
       showCategory(catSlug);
     } else if (hash.startsWith("#/article/")) {
-      const artId = hash.replace("#/article/", "");
-      showArticle(artId);
+      const rawTarget = hash.replace("#/article/", "");
+      // Separate article slug from anchor if present (e.g. slug#heading)
+      const [artSlug, subAnchor] = rawTarget.split("#");
+      resolveAndShowArticle(artSlug, subAnchor);
     } else if (hash.startsWith("#")) {
-      // Direct article slug (e.g. #integrations-to-social-media)
-      const slug = hash.replace("#", "");
-      const found = kb.Articles.find(a => a.Id === slug || a.Id.includes(slug));
-      if (found) {
-        showArticle(found.Id);
-      } else {
-        collectionsView.style.display = "block";
+      const rawTarget = hash.replace("#", "");
+      if (rawTarget.startsWith("h_")) {
+        // Just an on-page section jump
+        return;
       }
+      resolveAndShowArticle(rawTarget);
+    }
+  }
+
+  // Resolve article by ID, slug, or approximate match
+  function resolveAndShowArticle(searchSlug, subAnchor) {
+    const clean = searchSlug.toLowerCase().trim();
+    let found = kb.Articles.find(a => a.Id === clean);
+    if (!found) {
+      found = kb.Articles.find(a => a.Id.endsWith(clean) || clean.endsWith(a.Id));
+    }
+    if (!found) {
+      found = kb.Articles.find(a => a.Id.includes(clean) || clean.includes(a.Id));
+    }
+
+    if (found) {
+      showArticle(found.Id);
+      if (subAnchor) {
+        setTimeout(() => {
+          const el = document.getElementById(subAnchor);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      collectionsView.style.display = "block";
     }
   }
 
