@@ -4,4 +4,5 @@ Disallow: /*?edit=*
 Disallow: /*?editor=*
 Allow: /
 
-Sitemap: https://ithealthcenter.com/
+Sitemap: https://socialhelp.bizntechstl.com/
+
