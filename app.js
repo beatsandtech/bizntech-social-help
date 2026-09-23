@@ -197,6 +197,16 @@
     // Body
     articleBody.innerHTML = art.Body;
 
+    // Ensure relative image paths resolve correctly regardless of trailing slash / subfolder
+    const inImages = articleBody.querySelectorAll("img");
+    inImages.forEach(img => {
+      const src = img.getAttribute("src");
+      if (src && src.startsWith("assets/images/")) {
+        // Normalize so it always references relative to the root/subdomain base
+        img.src = src;
+      }
+    });
+
     // Fix internal anchor clicks if any
     const inLinks = articleBody.querySelectorAll("a");
     inLinks.forEach(l => {
