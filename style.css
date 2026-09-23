@@ -92,12 +92,12 @@ a:hover {
 }
 
 .site-logo-img {
-  height: 48px;
+  height: 28px;
   width: auto;
-  max-width: 220px;
+  max-width: 130px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
 }
 
 .brand-tag {
@@ -676,9 +676,9 @@ a:hover {
 }
 
 .footer-logo-img {
-  height: 38px;
+  height: 24px;
   width: auto;
-  max-width: 160px;
+  max-width: 110px;
   object-fit: contain;
   display: block;
 }
@@ -704,8 +704,8 @@ a:hover {
   }
   
   .site-logo-img {
-    height: 40px;
-    max-width: 180px;
+    height: 24px;
+    max-width: 110px;
   }
 
   .footer-inner {
