@@ -77,7 +77,7 @@ a:hover {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
   color: #ffffff;
   font-weight: 700;
@@ -88,16 +88,23 @@ a:hover {
 .brand-logo:hover {
   text-decoration: none;
   color: #ffffff;
-  opacity: 0.95;
 }
 
-.site-logo-img {
-  height: 28px;
-  width: auto;
-  max-width: 130px;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+}
+
+.logo-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .brand-tag {
@@ -668,21 +675,6 @@ a:hover {
   gap: 20px;
 }
 
-.footer-brand-wrap {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.footer-logo-img {
-  height: 24px;
-  width: auto;
-  max-width: 110px;
-  object-fit: contain;
-  display: block;
-}
-
 .footer-links {
   display: flex;
   gap: 20px;
@@ -702,11 +694,6 @@ a:hover {
     gap: 16px;
     align-items: flex-start;
   }
-  
-  .site-logo-img {
-    height: 24px;
-    max-width: 110px;
-  }
 
   .footer-inner {
     flex-direction: column;
@@ -714,4 +701,5 @@ a:hover {
     gap: 16px;
   }
 }
+
 
